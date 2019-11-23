@@ -13,7 +13,7 @@ Este repositorio contiene el código del gateway del sistema de validación cred
 git clone https://github.com/nickforla/tap-gateway.git
 cd tap-gateway/
 ./mvnw install
-java -jar target/tap-gateway.jar
+java -jar target/tap-gateway-1.0.0.jar
 ```
 Una vez que el jar fue ejecutado, el servicio corre en el puerto 8080.
 

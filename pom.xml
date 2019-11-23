@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>tap.nforla</groupId>
 	<artifactId>tap-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>tap-gateway</name>
 	<description>Gateway para los microservicios de trabajo práctico TAP</description>
 
