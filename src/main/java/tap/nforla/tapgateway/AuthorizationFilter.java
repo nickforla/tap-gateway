@@ -11,7 +11,6 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AuthorizationFilter extends ZuulFilter {
 
     private final Logger logger = LoggerFactory.getLogger(AuthorizationFilter.class);
-    @Value("${GATEWAY_JWT_SECRET}")
+    @Value("${TAP_JWT_SECRET}")
     private String jwtSharedSecret;
     private final String TOKEN_HEADER = "Authorization";
     private final String TOKEN_PREFIX = "Bearer ";
@@ -62,8 +61,6 @@ public class AuthorizationFilter extends ZuulFilter {
 
                     String username = claimsJws.getBody().getSubject();
 
-                    logger.info(username);
-
                     if(StringUtils.isNotEmpty(username)){
                         logger.info(String.format("Token válido: %s autorizado", username));
                         return null;
@@ -81,7 +78,6 @@ public class AuthorizationFilter extends ZuulFilter {
 
             }
         }
-
         return null;
     }
 }
